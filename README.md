@@ -11,6 +11,10 @@ Experiment for Need for Speed: ProStreet that removes or increases certain memor
 
 Please note that this mod is a proof of concept and does not increase the limit of actual cars in a race, only vehicle counts in general
 
+## Features
+
+- Virtually unlimited amounts of vehicles, with memory allocated on the fly
+
 ## Building
 
 Building is done on an Arch Linux system with CLion and vcpkg being used for the build process. 
