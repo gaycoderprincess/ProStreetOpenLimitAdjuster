@@ -141,7 +141,7 @@ void DebugMenu() {
 	DrawMenuOption(std::format("VEHICLE_TRAILERS: {}", VEHICLE_LIST::GetList(VEHICLE_TRAILERS).size()));
 	//DrawMenuOption(std::format("RigidBody: {}", RigidBody::mCount));
 	//DrawMenuOption(std::format("SimpleRigidBody: {}", SimpleRigidBody::mCount));
-	//DrawMenuOption(std::format("SimTask: {}", *(int*)0x988ED0));
+	DrawMenuOption(std::format("SimTask: {}", *(int*)0xFFD724));
 	//DrawMenuOption(std::format("Free Memory: {}K", bCountFreeMemory(0) >> 10));
 
 	ChloeMenuLib::EndMenu();
@@ -224,7 +224,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID) {
 			}
 
 			// remove limit from SimTask
-			//NyaHookLib::Patch<uint8_t>(0x6ED14A, 0xEB);
+			NyaHookLib::Patch<uint8_t>(0x4CE760, 0xEB);
 
 			uintptr_t vtables[] = {
 				0xA11388, // UTL::FixedVector<ActionQueue *,32,16>::`RTTI Complete Object Locator'
